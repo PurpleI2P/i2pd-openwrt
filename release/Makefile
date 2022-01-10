@@ -1,7 +1,7 @@
 #
 # Copyright (C) 2015, 2016 gxcreator
 # Copyright (C) 2017 OpenWrt.org
-# Copyright (C) 2021 PurpleI2P team
+# Copyright (C) 2021-2022 PurpleI2P team
 #
 # This is free software, licensed under the GNU General Public License v2.
 # See /LICENSE for more information.
@@ -61,6 +61,7 @@ define Package/i2pd/install
 	$(INSTALL_DIR) $(1)/etc/i2pd
 	$(INSTALL_DATA) $(PKG_BUILD_DIR)/contrib/i2pd.conf $(1)/etc/i2pd/i2pd.conf.example
 	$(INSTALL_DATA) ./files/i2pd.conf $(1)/etc/i2pd
+	# subscriptions.txt deprecated, see #8088
 	$(INSTALL_DIR) $(1)/etc/i2pd/tunnels.d
 	$(INSTALL_DATA) $(PKG_BUILD_DIR)/contrib/tunnels.conf $(1)/etc/i2pd
 endef

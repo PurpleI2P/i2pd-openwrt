@@ -1,7 +1,7 @@
 #
 # Copyright (C) 2015, 2016 gxcreator
 # Copyright (C) 2017 OpenWrt.org
-# Copyright (C) 2021 PurpleI2P team
+# Copyright (C) 2021-2022 PurpleI2P team
 #
 # This is free software, licensed under the GNU General Public License v2.
 # See /LICENSE for more information.
@@ -10,14 +10,13 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=i2pd
-#PKG_VERSION:=2.40.0
 PKG_RELEASE:=1
 PKG_BUILD_PARALLEL:=1
 
 PKG_SOURCE_PROTO:=git
 PKG_SOURCE_URL:=https://github.com/PurpleI2P/i2pd.git
-PKG_SOURCE_DATE:=2021-12-25
-PKG_SOURCE_VERSION:=1c95c7856f9a637f998882acaba679210bb9cb35
+PKG_SOURCE_DATE:=2022-01-10
+PKG_SOURCE_VERSION:=843a96895993bb56d378c6becbe329e88d96c042
 
 PKG_MAINTAINER:=R4SAS I2P <r4sas@i2pmail.org>
 PKG_LICENSE:=BSD-3-Clause
