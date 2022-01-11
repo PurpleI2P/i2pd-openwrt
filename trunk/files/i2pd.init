@@ -19,7 +19,7 @@ start_instance() {
 	local data_dir netdb_dir addressbook_dir cfg="$1"
 
 	config_get data_dir "$cfg" data_dir "$DATADIR"
-	config_get netdb_dir "$cfg" netdb__dir
+	config_get netdb_dir "$cfg" netdb_dir
 	config_get addressbook_dir "$cfg" addressbook_dir
 
 	## Setting up data dir
