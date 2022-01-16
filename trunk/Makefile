@@ -15,8 +15,8 @@ PKG_BUILD_PARALLEL:=1
 
 PKG_SOURCE_PROTO:=git
 PKG_SOURCE_URL:=https://github.com/PurpleI2P/i2pd.git
-PKG_SOURCE_DATE:=2022-01-10
-PKG_SOURCE_VERSION:=843a96895993bb56d378c6becbe329e88d96c042
+PKG_SOURCE_DATE:=2022-01-16
+PKG_SOURCE_VERSION:=58cf26c3049cee5f45b76361fadb65d74d32b240
 
 PKG_MAINTAINER:=R4SAS I2P <r4sas@i2pmail.org>
 PKG_LICENSE:=BSD-3-Clause
@@ -60,8 +60,9 @@ define Package/i2pd/install
 	$(INSTALL_CONF) ./files/i2pd.config $(1)/etc/config/i2pd
 	$(INSTALL_DIR) $(1)/etc/i2pd
 	$(INSTALL_DATA) $(PKG_BUILD_DIR)/contrib/i2pd.conf $(1)/etc/i2pd
-	$(INSTALL_DIR) $(1)/etc/i2pd/tunnels.d
 	$(INSTALL_DATA) $(PKG_BUILD_DIR)/contrib/tunnels.conf $(1)/etc/i2pd
+	$(INSTALL_DIR) $(1)/etc/i2pd/tunnels.d
+	$(INSTALL_DATA) $(PKG_BUILD_DIR)/contrib/tunnels.d/README $(1)/etc/i2pd/tunnels.d
 endef
 
 $(eval $(call BuildPackage,i2pd))

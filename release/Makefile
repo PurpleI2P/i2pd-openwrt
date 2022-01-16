@@ -60,9 +60,10 @@ define Package/i2pd/install
 	$(INSTALL_CONF) ./files/i2pd.config $(1)/etc/config/i2pd
 	$(INSTALL_DIR) $(1)/etc/i2pd
 	$(INSTALL_DATA) $(PKG_BUILD_DIR)/contrib/i2pd.conf $(1)/etc/i2pd
+	$(INSTALL_DATA) $(PKG_BUILD_DIR)/contrib/tunnels.conf $(1)/etc/i2pd
 	# subscriptions.txt deprecated, see #8088
 	$(INSTALL_DIR) $(1)/etc/i2pd/tunnels.d
-	$(INSTALL_DATA) $(PKG_BUILD_DIR)/contrib/tunnels.conf $(1)/etc/i2pd
+	$(INSTALL_DATA) $(PKG_BUILD_DIR)/contrib/tunnels.d/README $(1)/etc/i2pd/tunnels.d
 endef
 
 $(eval $(call BuildPackage,i2pd))
