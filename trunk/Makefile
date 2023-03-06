@@ -1,7 +1,7 @@
 #
 # Copyright (C) 2015, 2016 gxcreator
 # Copyright (C) 2017 OpenWrt.org
-# Copyright (C) 2021-2022 PurpleI2P team
+# Copyright (C) 2021-2023 PurpleI2P team
 #
 # This is free software, licensed under the GNU General Public License v2.
 # See /LICENSE for more information.
@@ -15,8 +15,8 @@ PKG_BUILD_PARALLEL:=1
 
 PKG_SOURCE_PROTO:=git
 PKG_SOURCE_URL:=https://github.com/PurpleI2P/i2pd.git
-PKG_SOURCE_DATE:=2022-10-05
-PKG_SOURCE_VERSION:=3945f34e9643a66135a5d08145db48118e93c17e
+PKG_SOURCE_DATE:=2023-03-06
+PKG_SOURCE_VERSION:=24a14e3440128fec355b4785d88b899e7d26c210
 
 PKG_MAINTAINER:=R4SAS I2P <r4sas@i2pmail.org>
 PKG_LICENSE:=BSD-3-Clause
@@ -55,7 +55,7 @@ define Package/i2pd/install
 	$(INSTALL_DIR) $(1)/etc/init.d
 	$(INSTALL_BIN) ./files/i2pd.init $(1)/etc/init.d/i2pd
 	$(INSTALL_DIR) $(1)/usr/share/i2pd
-	$(CP) $(PKG_BUILD_DIR)/contrib/certificates  $(1)/usr/share/i2pd
+	$(CP) $(PKG_BUILD_DIR)/contrib/certificates $(1)/usr/share/i2pd
 	$(INSTALL_DIR) $(1)/etc/config
 	$(INSTALL_CONF) ./files/i2pd.config $(1)/etc/config/i2pd
 	$(INSTALL_DIR) $(1)/etc/i2pd
