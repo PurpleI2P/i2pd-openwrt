@@ -1,7 +1,7 @@
 #
 # Copyright (C) 2015, 2016 gxcreator
 # Copyright (C) 2017 OpenWrt.org
-# Copyright (C) 2021-2023 PurpleI2P team
+# Copyright (C) 2021-2024 PurpleI2P team
 #
 # This is free software, licensed under the GNU General Public License v2.
 # See /LICENSE for more information.
@@ -10,7 +10,7 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=i2pd
-PKG_VERSION:=2.48.0
+PKG_VERSION:=2.54.0
 PKG_RELEASE:=1
 PKG_BUILD_PARALLEL:=1
 
@@ -21,14 +21,15 @@ PKG_HASH:=ccf417aa66ce37f72ea15b7fbcff4c71e823566ea74bda696b9c1e19aae08739
 PKG_MAINTAINER:=David Yang <mmyangfl@gmail.com>
 PKG_LICENSE:=BSD-3-Clause
 PKG_LICENSE_FILES:=LICENSE
+PKG_CPE_ID:=cpe:/a:i2pd:i2pd
 
 include $(INCLUDE_DIR)/package.mk
 
 define Package/i2pd
 	SECTION:=net
 	CATEGORY:=Network
-	DEPENDS:=+libopenssl +boost +boost-system +boost-filesystem \
-	         +boost-program_options +boost-date_time +libatomic +zlib
+	DEPENDS:=+libopenssl +boost +boost-system \
+	         +boost-program_options +libatomic +zlib
 	TITLE:=full-featured C++ implementation of I2P client
 	URL:=https://github.com/PurpleI2P/i2pd
 	USERID:=i2pd:i2pd
